@@ -253,7 +253,8 @@ namespace Steamworks
 		{
 			try
 			{
-				OnMessage( msg->DataPtr, msg->DataSize, msg->RecvTime, msg->MessageNumber, msg->Channel );
+				// EDITED!!!! <----- writing lane parameter
+				OnMessage( msg->DataPtr, msg->DataSize, msg->RecvTime, msg->MessageNumber, msg->Channel, msg->IdxLane );
 			}
 			finally
 			{
@@ -265,7 +266,8 @@ namespace Steamworks
 			}
 		}
 
-		public virtual void OnMessage( IntPtr data, int size, long messageNum, long recvTime, int channel )
+		// EDITED!!!! <----- Added lane parameter
+		public virtual void OnMessage( IntPtr data, int size, long messageNum, long recvTime, int channel, int lane )
 		{
 			Interface?.OnMessage( data, size, messageNum, recvTime, channel );
 		}

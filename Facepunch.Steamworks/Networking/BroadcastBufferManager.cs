@@ -6,7 +6,7 @@ using Steamworks.Data;
 
 namespace Steamworks
 {
-	internal static unsafe class BufferManager
+	public static unsafe class BufferManager
 	{
 		private sealed class ReferenceCounter
 		{
@@ -92,7 +92,11 @@ namespace Steamworks
 		private static void Free( NetMsg* msg )
 		{
 			var ptr = msg->DataPtr;
+			Free(ptr);
+		}
 
+		public static void Free(IntPtr ptr)
+		{
 			lock ( ReferenceCounters )
 			{
 				if ( !ReferenceCounters.TryGetValue( ptr, out var counter ) )
@@ -254,6 +258,7 @@ namespace Steamworks
 		private const int Bucket16Kb = 16 * 1024;
 		private const int Bucket64Kb = 64 * 1024;
 		private const int Bucket256Kb = 256 * 1024;
+		private const int Bucket512Kb = 512 * 1024;
 
 		private static int GetBucketSize( int size )
 		{
@@ -263,6 +268,7 @@ namespace Steamworks
 			if ( size <= Bucket16Kb ) return Bucket16Kb;
 			if ( size <= Bucket64Kb ) return Bucket64Kb;
 			if ( size <= Bucket256Kb ) return Bucket256Kb;
+			if ( size <= Bucket512Kb ) return Bucket512Kb;
 
 			return -1;
 		}
@@ -275,6 +281,7 @@ namespace Steamworks
 			if ( size <= Bucket16Kb ) return 32;
 			if ( size <= Bucket64Kb ) return 16;
 			if ( size <= Bucket256Kb ) return 8;
+			if ( size <= Bucket512Kb ) return 4;
 
 			return -1;
 		}
