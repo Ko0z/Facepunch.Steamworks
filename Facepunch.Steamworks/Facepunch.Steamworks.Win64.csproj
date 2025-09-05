@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<AssemblyName>Facepunch.Steamworks.Win64</AssemblyName>
 		<DefineConstants>$(DefineConstants);PLATFORM_WIN64;PLATFORM_WIN;PLATFORM_64</DefineConstants>
-		<TargetFrameworks>net6.0;netstandard2.1;net462</TargetFrameworks>
+		<TargetFrameworks>net6.0;netstandard2.1;net46</TargetFrameworks>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>	
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
@@ -25,9 +25,6 @@
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	</PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="Microsoft.NETFramework.ReferenceAssemblies.net462" />
-  </ItemGroup>
 	<ItemGroup>
 		<None Include="Facepunch.Steamworks.jpg">
 			<Pack>true</Pack>
@@ -40,12 +37,6 @@
 		</None>
 	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net462" Version="1.0.3">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-  </ItemGroup>
 	<Import Project="Facepunch.Steamworks.targets" />
 
 	<Target Name="PostBuildHome" AfterTargets="PostBuildEvent" Condition="'$(Computername)'=='GarryBasementPc'">
