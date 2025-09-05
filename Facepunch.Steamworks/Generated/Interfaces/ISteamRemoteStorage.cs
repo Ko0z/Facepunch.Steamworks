@@ -7,7 +7,7 @@ using Steamworks.Data;
 
 namespace Steamworks
 {
-	internal unsafe partial class ISteamRemoteStorage : SteamInterface
+	internal unsafe class ISteamRemoteStorage : SteamInterface
 	{
 		public const string Version = "STEAMREMOTESTORAGE_INTERFACE_VERSION016";
 		

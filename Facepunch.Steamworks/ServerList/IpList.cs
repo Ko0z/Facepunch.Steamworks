@@ -26,17 +26,15 @@ namespace Steamworks.ServerList
 
 			var ips = Ips.ToArray();
 
-			wantsCancel = false;
-
-			while ( !wantsCancel )
+			while ( true )
 			{
-				var sublist = ips.Skip( pointer ).Take( blockSize ).ToList();
-				if ( sublist.Count == 0 )
+				var sublist = ips.Skip( pointer ).Take( blockSize );
+				if ( sublist.Count() == 0 )
 					break;
 
 				using ( var list = new ServerList.Internet() )
 				{
-					list.AddFilter( "or", sublist.Count.ToString() );
+					list.AddFilter( "or", sublist.Count().ToString() );
 
 					foreach ( var server in sublist )
 					{
@@ -44,6 +42,9 @@ namespace Steamworks.ServerList
 					}
 
 					await list.RunQueryAsync( timeoutSeconds );
+
+					if ( wantsCancel )
+						return false;
 
 					Responsive.AddRange( list.Responsive );
 					Responsive = Responsive.Distinct().ToList();
@@ -65,11 +66,5 @@ namespace Steamworks.ServerList
 			wantsCancel = true;
 		}
 
-		public override void Dispose()
-		{
-			base.Dispose();
-
-			wantsCancel = true;
-		}
 	}
 }

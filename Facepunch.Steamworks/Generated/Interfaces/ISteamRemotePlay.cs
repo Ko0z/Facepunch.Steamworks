@@ -7,7 +7,7 @@ using Steamworks.Data;
 
 namespace Steamworks
 {
-	internal unsafe partial class ISteamRemotePlay : SteamInterface
+	internal unsafe class ISteamRemotePlay : SteamInterface
 	{
 		public const string Version = "STEAMREMOTEPLAY_INTERFACE_VERSION002";
 		

@@ -7,7 +7,7 @@ using Steamworks.Data;
 
 namespace Steamworks
 {
-	internal unsafe partial class ISteamController : SteamInterface
+	internal unsafe class ISteamController : SteamInterface
 	{
 		public const string Version = "SteamController008";
 		

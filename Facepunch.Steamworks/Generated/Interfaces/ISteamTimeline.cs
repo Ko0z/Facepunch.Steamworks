@@ -7,7 +7,7 @@ using Steamworks.Data;
 
 namespace Steamworks
 {
-	internal unsafe partial class ISteamTimeline : SteamInterface
+	internal unsafe class ISteamTimeline : SteamInterface
 	{
 		public const string Version = "STEAMTIMELINE_INTERFACE_V004";
 		

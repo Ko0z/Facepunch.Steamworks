@@ -7,7 +7,7 @@ using Steamworks.Data;
 
 namespace Steamworks
 {
-	internal unsafe partial class ISteamGameSearch : SteamInterface
+	internal unsafe class ISteamGameSearch : SteamInterface
 	{
 		public const string Version = "SteamMatchGameSearch001";
 		

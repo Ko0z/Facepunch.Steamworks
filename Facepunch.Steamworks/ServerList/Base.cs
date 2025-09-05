@@ -162,17 +162,11 @@ namespace Steamworks.ServerList
 		{
 			watchList.RemoveAll( x =>
 			{
-				// First check if the server has responded without allocating server info
-				bool hasResponded = Internal.HasServerResponded( request, x );
-				if ( hasResponded )
+				var info = Internal.GetServerDetails( request, x );
+				if ( info.HadSuccessfulResponse )
 				{
-					// Now get all server info
-					var info = Internal.GetServerDetails( request, x );
-					if ( info.HadSuccessfulResponse )
-					{
-						OnServer( ServerInfo.From( info ), info.HadSuccessfulResponse );
-						return true;
-					}
+					OnServer( ServerInfo.From( info ), info.HadSuccessfulResponse );
+					return true;
 				}
 
 				return false;
@@ -183,10 +177,8 @@ namespace Steamworks.ServerList
 		{
 			watchList.RemoveAll( x =>
 			{
-				var details = Internal.GetServerDetails( request, x );
-				var info = ServerInfo.From( details );
-				info.Ping = int.MaxValue;
-				Unqueried.Add( info );
+				var info = Internal.GetServerDetails( request, x );
+				OnServer( ServerInfo.From( info ), info.HadSuccessfulResponse );
 				return true;
 			} );
 		}

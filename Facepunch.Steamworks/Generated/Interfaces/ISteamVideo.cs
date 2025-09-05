@@ -7,7 +7,7 @@ using Steamworks.Data;
 
 namespace Steamworks
 {
-	internal unsafe partial class ISteamVideo : SteamInterface
+	internal unsafe class ISteamVideo : SteamInterface
 	{
 		public const string Version = "STEAMVIDEO_INTERFACE_V007";
 		

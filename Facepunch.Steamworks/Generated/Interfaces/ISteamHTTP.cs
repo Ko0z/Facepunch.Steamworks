@@ -7,7 +7,7 @@ using Steamworks.Data;
 
 namespace Steamworks
 {
-	internal unsafe partial class ISteamHTTP : SteamInterface
+	internal unsafe class ISteamHTTP : SteamInterface
 	{
 		public const string Version = "STEAMHTTP_INTERFACE_VERSION003";
 		

@@ -7,7 +7,7 @@ using Steamworks.Data;
 
 namespace Steamworks
 {
-	internal unsafe partial class ISteamScreenshots : SteamInterface
+	internal unsafe class ISteamScreenshots : SteamInterface
 	{
 		public const string Version = "STEAMSCREENSHOTS_INTERFACE_VERSION003";
 		

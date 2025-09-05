@@ -7,7 +7,7 @@ using Steamworks.Data;
 
 namespace Steamworks
 {
-	internal unsafe partial class ISteamFriends : SteamInterface
+	internal unsafe class ISteamFriends : SteamInterface
 	{
 		public const string Version = "SteamFriends017";
 		
