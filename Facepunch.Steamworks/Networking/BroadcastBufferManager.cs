@@ -87,7 +87,7 @@ namespace Steamworks
 
 			return ptr;
 		}
-		
+
 		[MonoPInvokeCallback]
 		private static void Free( NetMsg* msg )
 		{
@@ -95,8 +95,8 @@ namespace Steamworks
 			Free(ptr);
 		}
 
-		public static void Free(IntPtr ptr)
-		{
+		public static void Free( IntPtr ptr ) 
+		{ 
 			lock ( ReferenceCounters )
 			{
 				if ( !ReferenceCounters.TryGetValue( ptr, out var counter ) )

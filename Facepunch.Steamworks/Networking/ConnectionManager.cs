@@ -245,7 +245,7 @@ namespace Steamworks
 		/// </summary>
 		public void SendMessages( Connection[] connections, int connectionCount, string str, SendType sendType = SendType.Reliable, Result[] results = null )
 		{
-			var bytes = System.Text.Encoding.UTF8.GetBytes( str );
+			var bytes = Utility.Utf8NoBom.GetBytes( str );
 			SendMessages( connections, connectionCount, bytes, sendType, results );
 		}
 
@@ -253,7 +253,6 @@ namespace Steamworks
 		{
 			try
 			{
-				// EDITED!!!! <----- writing lane parameter
 				OnMessage( msg->DataPtr, msg->DataSize, msg->RecvTime, msg->MessageNumber, msg->Channel, msg->IdxLane );
 			}
 			finally
@@ -266,7 +265,6 @@ namespace Steamworks
 			}
 		}
 
-		// EDITED!!!! <----- Added lane parameter
 		public virtual void OnMessage( IntPtr data, int size, long messageNum, long recvTime, int channel, int lane )
 		{
 			Interface?.OnMessage( data, size, messageNum, recvTime, channel );

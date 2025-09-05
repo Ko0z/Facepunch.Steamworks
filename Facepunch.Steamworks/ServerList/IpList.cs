@@ -1,9 +1,5 @@
-﻿using Steamworks.Data;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Steamworks.ServerList
@@ -64,9 +60,11 @@ namespace Steamworks.ServerList
 			return true;
 		}
 
+		// note: Cancel doesn't get called in Dispose because request is always null for this class
 		public override void Cancel()
 		{
 			wantsCancel = true;
 		}
+
 	}
 }

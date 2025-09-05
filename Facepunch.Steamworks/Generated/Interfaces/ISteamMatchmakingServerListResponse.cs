@@ -9,7 +9,6 @@ namespace Steamworks
 {
 	internal unsafe class ISteamMatchmakingServerListResponse : SteamInterface
 	{
-		
 		internal ISteamMatchmakingServerListResponse( bool IsGameServer )
 		{
 			SetupInterface( IsGameServer );

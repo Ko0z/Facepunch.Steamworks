@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35521.163
+VisualStudioVersion = 17.12.35521.163 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generator", "Generator\Generator.csproj", "{B7225D11-2AAA-49D6-AE93-A73696EA35FE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Facepunch.Steamworks.Win64", "Facepunch.Steamworks\Facepunch.Steamworks.Win64.csproj", "{8C73DA93-73AD-4445-9A2C-15D4A44337D3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Facepunch.Steamworks.Win32", "Facepunch.Steamworks\Facepunch.Steamworks.Win32.csproj", "{2D6247F6-8AB2-405F-A00E-3A364B808A55}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Facepunch.Steamworks.Posix", "Facepunch.Steamworks\Facepunch.Steamworks.Posix.csproj", "{C62FF421-BE44-4DB0-B99A-E13E007A30B9}"
 EndProject
@@ -43,6 +45,18 @@ Global
 		{8C73DA93-73AD-4445-9A2C-15D4A44337D3}.Release|x64.Build.0 = Release|Any CPU
 		{8C73DA93-73AD-4445-9A2C-15D4A44337D3}.Release|x86.ActiveCfg = Release|Any CPU
 		{8C73DA93-73AD-4445-9A2C-15D4A44337D3}.Release|x86.Build.0 = Release|Any CPU
+		{2D6247F6-8AB2-405F-A00E-3A364B808A55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D6247F6-8AB2-405F-A00E-3A364B808A55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D6247F6-8AB2-405F-A00E-3A364B808A55}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2D6247F6-8AB2-405F-A00E-3A364B808A55}.Debug|x64.Build.0 = Debug|Any CPU
+		{2D6247F6-8AB2-405F-A00E-3A364B808A55}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2D6247F6-8AB2-405F-A00E-3A364B808A55}.Debug|x86.Build.0 = Debug|Any CPU
+		{2D6247F6-8AB2-405F-A00E-3A364B808A55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D6247F6-8AB2-405F-A00E-3A364B808A55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D6247F6-8AB2-405F-A00E-3A364B808A55}.Release|x64.ActiveCfg = Release|Any CPU
+		{2D6247F6-8AB2-405F-A00E-3A364B808A55}.Release|x64.Build.0 = Release|Any CPU
+		{2D6247F6-8AB2-405F-A00E-3A364B808A55}.Release|x86.ActiveCfg = Release|Any CPU
+		{2D6247F6-8AB2-405F-A00E-3A364B808A55}.Release|x86.Build.0 = Release|Any CPU
 		{C62FF421-BE44-4DB0-B99A-E13E007A30B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C62FF421-BE44-4DB0-B99A-E13E007A30B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C62FF421-BE44-4DB0-B99A-E13E007A30B9}.Debug|x64.ActiveCfg = Debug|Any CPU
